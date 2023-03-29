@@ -1,0 +1,11 @@
+name: Repository_size
+
+on: [push]
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo salut
+      - run: echo du -skh --exclude=".git"
