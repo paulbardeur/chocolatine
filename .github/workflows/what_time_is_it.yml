@@ -2,7 +2,7 @@ name: Petit test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  First proccess:
+  First_proccess:
     runs-on: ubuntu-latest
     steps:
       - run: Salut mannnn !!!"
