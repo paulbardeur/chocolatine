@@ -13,3 +13,17 @@ jobs:
       
     - name: Run coding style checker
       run: check.sh $(pwd) $(pwd)
+
+    - name: Save coding style errors
+      id: coding_style_errors
+      run: |
+        set +e
+        errors=$(check.sh $(pwd) $(pwd) 2>&1)
+        echo "::set-output name=errors::$errors"
+      continue-on-error: true
+
+    - name: Check coding style errors
+      if: ${{ steps.coding_style_errors.outputs.errors != '' }}
+      run: |
+        echo "${{ steps.coding_style_errors.outputs.errors }}"
+        exit 1
