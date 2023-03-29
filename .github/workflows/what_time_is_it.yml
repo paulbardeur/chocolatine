@@ -1,0 +1,6 @@
+name: What time is it ?
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+jobs:
+    runs-on: ubuntu-latest
+    run: echo GitHub Action réussi ! 
