@@ -5,4 +5,4 @@ jobs:
   First_proccess:
     runs-on: ubuntu-latest
     steps:
-      - run: Salut mannnn !!!"
+      - run: echo "Salut mannnn !!!"
