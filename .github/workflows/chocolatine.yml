@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-    - uses: actions/checkout@v3
-  
+ 
     - name: Checking the coding style
+    uses: actions/checkout@v3
     run: |
       docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest
       check.sh $(pwd) $(pwd)
-    
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
