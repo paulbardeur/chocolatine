@@ -15,8 +15,5 @@ jobs:
     run: |
       docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest
       check.sh $(pwd) $(pwd)
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
 
