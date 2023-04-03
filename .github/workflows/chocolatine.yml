@@ -11,13 +11,13 @@ on:
 jobs:
   checking_coding_style:
     runs-on: ubuntu-latest
-    container: appghcr.io/epitech/coding-style-checker:latest
     steps:
       - name: Checking files
         uses: actions/checkout@v3
 
       - name: Checking coding style
         run: |
+          docker run appghcr.io/epitech/coding-style-checker:latest
           check.sh $(pwd) $(pwd)
 
   check_program_compilation:
