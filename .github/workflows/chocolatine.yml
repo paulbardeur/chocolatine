@@ -11,14 +11,18 @@ jobs:
 
       - name: Checking coding style
         run: |
-          docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest check.sh $(pwd) $(pwd)
+          docker run appghcr.io/epitech/coding-style-checker:latest
+          check.sh $(pwd) $(pwd)
 
   check_program_compilation:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
+    container:
+      image: epitechcontent/epitest-docker
     steps:
       - name: Checking files
         uses: actions/checkout@v3
-      
+
       - name: Make
         run: |
           make
@@ -28,6 +32,9 @@ jobs:
 
   run_tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
+    container:
+      image: epitechcontent/epitest-docker
     steps:
       - name: Checking files
         uses: actions/checkout@v3
