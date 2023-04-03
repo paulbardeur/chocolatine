@@ -8,12 +8,36 @@ jobs:
     steps:
       - name: Checking files
         uses: actions/checkout@v3
-        with: 
-          ref: ${{ github.head_red }}
+
       - name: Checking coding style
         run: |
-          docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest
-          check.sh $(pwd) $(pwd)
+          docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest check.sh $(pwd) $(pwd)
+
+  check_program_compilation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking files
+        uses: actions/checkout@v3
+      
+      - name: Make
+        run: |
+          make
+      
+      - name: Make clean
+        run: make clean
+
+      - name: Checking execution
+
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking files
+        uses: actions/checkout@v3
+
+      - name: Make tests_run
+        run: |
+          make tests_run
+
 
 
 
