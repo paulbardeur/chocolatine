@@ -26,8 +26,6 @@ jobs:
       - name: Make clean
         run: make clean
 
-      - name: Checking execution
-
   run_tests:
     runs-on: ubuntu-latest
     steps:
