@@ -6,10 +6,12 @@ jobs:
   checking the coding style:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking the coding style
+      - name: Checking files
         uses: actions/checkout@v3
+      - name: Checking coding style
         run: |
           docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest
           check.sh $(pwd) $(pwd)
+
 
 
