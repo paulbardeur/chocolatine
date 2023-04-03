@@ -8,7 +8,8 @@ jobs:
     steps:
       - name: Checking files
         uses: actions/checkout@v3
-        with: ref: ${{ github.head_red }}
+        with: 
+          ref: ${{ github.head_red }}
       - name: Checking coding style
         run: |
           docker run --rm -v $(pwd):/appghcr.io/epitech/coding-style-checker:latest
