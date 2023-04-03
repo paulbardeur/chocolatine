@@ -3,7 +3,7 @@ name: Chocolatine
 on: [push]
 
 jobs:
-  checking the coding style:
+  checking_coding_style:
     runs-on: ubuntu-latest
     steps:
       - name: Checking files
